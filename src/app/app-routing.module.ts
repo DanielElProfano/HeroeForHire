@@ -8,10 +8,10 @@ const routes: Routes = [
       path:'home',
       loadChildren:() => import('./pages/home/home.module').then((m) =>m.HomeModule),
     },
-    // {
-    //   path:'list',
-    //   loadChildren:() => import('./pages/footer/footer.module').then((m) =>m.FooterModule),
-    // },
+    {
+      path:'choose',
+      loadChildren:() => import('./pages/choose/choose.module').then((m) =>m.ChooseModule),
+    },
 
 ];
 

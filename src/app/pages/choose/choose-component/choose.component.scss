@@ -1,0 +1,109 @@
+.b-hero{
+
+    display:flex;
+    background-color: lightgreen;
+    height: 180px;
+    width: 600px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,.9);
+
+    
+    -webkit-transform: skewX(15deg);
+    -moz-transform: skewX(15deg);
+    -ms-transform: skewX(15deg);
+    -o-transform: skewX(15deg);
+    transform: skewX(15deg);
+
+    &__skew{
+        z-index:10;
+        position: relative;
+        -webkit-transform: skewX(-15deg);
+    -moz-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    -o-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+  
+    }
+        
+    &__description{
+        height: 90%;
+        width: 25%;
+        display: flex;
+
+        &--notSkew{
+                -webkit-transform: skewX(-15deg);
+                -moz-transform: skewX(-15deg);
+                -ms-transform: skewX(-15deg);
+                -o-transform: skewX(-15deg);
+                transform: skewX(-15deg);
+
+
+            }
+        }
+     
+      
+    
+    &__info{
+
+        
+    }
+    &__name{
+        font-size: 1.2rem;
+        
+    }
+    &__img{
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 160px;
+        cursor: pointer;
+        
+    }
+}
+
+.b-hero__powerstats{
+    content:'';
+    // position:absolute;
+    top:10px; left:304px;
+    width:50%; height:90%;
+    background-color: rgba(90, 74, 199, .8);
+    
+    
+    -webkit-transform-origin:100% 100%;
+    -ms-transform-origin:100% 100%;
+    transform-origin:0% 0%;
+    
+    // -webkit-transform:skewX(15deg);
+    // -ms-transform:skewX(15deg);
+    // transform:skewX(15deg);
+    transition: all .5s ease-in-out;
+    z-index: -10;
+}
+.b-hero__powerstats:hover{
+    transform: translate(100px, 0px) 
+  
+
+}
+
+
+
+// div:before{
+//     content:'';
+//     position:absolute;
+//     top:50; left:0;
+//     width:50%; height:90%;
+//     background-color: rgba(90, 74, 199, .8);
+//     border-right:40px solid rgba(173, 96, 223, .8);
+    
+//     -webkit-transform-origin:100% 100%;
+//     -ms-transform-origin:100% 100%;
+//     transform-origin:0% 0%;
+    
+//     -webkit-transform:skewX(30deg);
+//     -ms-transform:skewX(250deg);
+//     transform:skewX(20deg);
+// }
+

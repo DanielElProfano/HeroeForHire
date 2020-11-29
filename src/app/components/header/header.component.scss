@@ -1,0 +1,37 @@
+.header{
+
+    display: column;
+    background-color: lightgray;
+    
+
+    &__title{
+
+        color: gray;
+    }
+    &__nav{
+
+        background-color: gray;
+    }
+    &__menu{
+
+        display:flex;
+    }
+    &__menu-options{
+
+        font-size: 1.4rem;
+        color:white;
+        text-decoration: none;
+        margin-left: 1rem;
+        padding: .5rem;
+        transition: all 0.3s ease-in-out
+    }
+
+}
+
+.header__menu-options:hover{
+
+    color:red;
+
+
+
+}

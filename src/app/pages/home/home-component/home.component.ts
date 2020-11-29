@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     // this.getListado();
-    this.getHeroes()
+    // this.getHeroes()
 
     
  
