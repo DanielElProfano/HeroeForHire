@@ -1,6 +1,18 @@
 .b-hero{
+    position: relative;
+    &__fondo{
 
-    display:flex;
+        position: absolute;
+        height: 100px;
+        width: 200px;
+        top:0px;
+        right: 10px;
+        background-color: blue;
+    }
+
+    &__stick{
+
+    // display:flex;
     background-color: lightgreen;
     height: 180px;
     width: 600px;
@@ -9,6 +21,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(0,0,0,.9);
+    
 
     
     -webkit-transform: skewX(15deg);
@@ -16,10 +29,17 @@
     -ms-transform: skewX(15deg);
     -o-transform: skewX(15deg);
     transform: skewX(15deg);
+}
+   &__fondo{
+        height: 300px;
+        width: 300px;
+        background-color: aquamarine;
 
+
+
+   }
     &__skew{
-        z-index:10;
-        position: relative;
+   
         -webkit-transform: skewX(-15deg);
     -moz-transform: skewX(-15deg);
     -ms-transform: skewX(-15deg);
@@ -70,7 +90,7 @@
     top:10px; left:304px;
     width:50%; height:90%;
     background-color: rgba(90, 74, 199, .8);
-    
+    z-index: -1;
     
     -webkit-transform-origin:100% 100%;
     -ms-transform-origin:100% 100%;
@@ -80,7 +100,7 @@
     // -ms-transform:skewX(15deg);
     // transform:skewX(15deg);
     transition: all .5s ease-in-out;
-    z-index: -10;
+    
 }
 .b-hero__powerstats:hover{
     transform: translate(100px, 0px) 

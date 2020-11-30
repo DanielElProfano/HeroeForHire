@@ -16,14 +16,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.getListado();
+    //  this.getListado();
     // this.getHeroes()
+    this.getPowerStats();
 
     
  
   }
   getHeroes(){
-    for(let i = 1; i <=731; i++){
+    for(let i = 1; i <=10; i++){
 
       this.heroesService.getHeroes(i,'bad').subscribe((result) => {
         
@@ -36,9 +37,26 @@ export class HomeComponent implements OnInit {
     }
 
   }
+  getPowerStats(){
+    for(let i= 1; i<=2; i++){
+     
+
+      this.heroesService.getPowerStats(i).subscribe((result) => {
+        this.personajes = result;
+        this.arrayHeroes.push(result);
+        console.log(result)
+        
+          })
+    }
+    
+    console.log(this.arrayHeroes);
+
+
+  }
+
 
   getListado(){
-    for(let i= 1; i<=10; i++){
+    for(let i= 1; i<=1; i++){
 
       this.heroesService.getList(i).subscribe((result) => {
         this.personajes = result;

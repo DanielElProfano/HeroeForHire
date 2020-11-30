@@ -1,12 +1,40 @@
-<h1>Listado</h1>
+<div class ="b-hero" *ngFor="let hero of arrayHeroes">
+    <div class="dos"> 
 
-<div class="" *ngFor="let hero of arrayHeroes">
+        <div class="">
+            <p class="b-text__slide">intelligence:{{hero.intelligence}}</p>
+            <p class="b-text__slide">combat{{hero.combat}}</p>
+            <p class="b-text__slide">durability{{hero.durability}}</p>
+            <p class="b-text__slide">power{{hero.power}}</p>
+            <p class="b-text__slide">speed{{hero.speed}}</p>
+            <p class="b-text__slide">strength{{hero.strength}}</p>
 
-    <p class="des">{{hero.name}} </p>
-    <img src="{{hero.image}}">
-    <p class="des"></p>
-    <p class="des"></p>
-    <p class="des"></p>
+        </div>
+    </div>
+    <div class="uno"> 
+        <div class="b-hero__stick">
+              
+        
+            <div class="b-hero__description">
+                <img class="b-hero__img" src="{{hero.image}}">
+            
+                
+                <div class="b-hero__info">
+                    <p class="b-text__slide b-text__slide--name">{{hero.name}} </p>
+                    <p class="b-text__slide">{{hero.race}}</p>
+                    <p class="b-text__slide">{{hero.weight}}</p>
+                    <p class="b-text__slide">{{hero.gender}}</p>
+
+                </div>
+
+            </div>
+        
 
 
-</div>
+
+
+    </div>
+    
+  
+  </div>
+  </div>
