@@ -54,11 +54,7 @@ export class HeroesService {
         if(!response){
           throw new Error('Value expected!');
         } else {
-
-          
-          
-       
-         const formatResult : InterfaceHeroPowerStats = {
+            const formatResult : InterfaceHeroPowerStats = {
 
             id : response.id,
             name : response.name,
@@ -84,9 +80,6 @@ export class HeroesService {
     )
   }
 
-
-
-  
   getHeroes(i:number, alignment:string){
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
     return this.http.get(Url).pipe(

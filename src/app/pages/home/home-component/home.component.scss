@@ -3,23 +3,24 @@
     left: 0px; 
     top: 0px;
       z-index: 10;
-      height:180px;
+      height:200px;
       width:400px;
         
-    background-color: blue;}
+    background-color: transparent;}
     .dos{
     position: absolute; 
-    left: 210px; 
+    left: 320px; 
     top: 5px;
       z-index: 1;
-      height:170px;
-      width: 400px;
+      height:190px;
+      width: 300px;
       transition: all 1s ease;
-      box-shadow: 0 0 20px rgba(0,0,0,.9);
+      box-shadow: 0 0 20px rgba(0,0,0,.6);
+      border-radius: 12px;
         
     background-color: red;}
     .dos:hover{
-       transform: translate(300px, 0px) 
+       transform: translate(200px, 0px) 
     }
 
 .b-hero{
@@ -28,16 +29,25 @@
         margin-top: 4rem;;
     &__stick{
 
-        // display:flex;
+        border-radius: 12px;
         background-color: lightgreen;
-        height: 180px;
+        height: 200px;
         width: 600px;
         margin-bottom: 2rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 20px rgba(0,0,0,.9);
+       
+        box-shadow: 0 0 20px rgba(0,0,0,.8);
+        -webkit-transform: skewX(15deg);
+        -moz-transform: skewX(15deg);
+        -ms-transform: skewX(15deg);
+        -o-transform: skewX(15deg);
+        transform: skewX(15deg);
         }
+    &__info{
+
+        margin-left: 1rem;
+    }
 
     &__description{
         height: 90%;
@@ -62,6 +72,16 @@
             cursor: pointer;
             
         }
+        
      
+}
+.b-text{
+
+    &__slide{
+        font-size: 1.2rem;
+        color: gray;
+        display: inline;
+        
+    }
 }
     

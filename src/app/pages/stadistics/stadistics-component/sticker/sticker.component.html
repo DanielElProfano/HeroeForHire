@@ -1,0 +1,25 @@
+<p>sticker works!</p>
+ 
+<div class =" b-stas">
+
+    <div class="b-filter">filter here!</div>
+    <div class="b-gallery" *ngFor="let hero of arrayHeroe">
+
+
+         <div  id = "{{hero.id}}" class="b-hero-stick" (click)="getId(this.id)">
+
+            <img src="{{ hero.image }}" alt="">
+            <div class="b-stats__label">
+                <p class ="b-text__slide">{{hero.name}}</p>
+                <p class ="b-text__slide">{{hero.alignment}}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="b-graph">Graph here!</div>
+
+
+
+</div>
