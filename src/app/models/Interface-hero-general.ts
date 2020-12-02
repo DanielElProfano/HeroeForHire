@@ -9,7 +9,7 @@ export interface InterfaceHeroGeneral {
    
 }
 
-export interface InterfaceHeroPowerStats {
+export interface InterfaceHeroDetail {
 
     id: string;
     name : string;
@@ -24,4 +24,15 @@ export interface InterfaceHeroPowerStats {
     power: string;
     combat :string;
     
+}
+export interface InterfacePowerStats{
+    id: string;
+    intelligence : string;
+    strength: string;
+    speed: string;
+    durability: string;
+    power: string;
+    combat :string;
+    name: string;
+
 }

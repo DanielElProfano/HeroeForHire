@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { Label, MultiDataSet } from 'ng2-charts';
+import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 
 @Component({
   selector: 'app-graph',
@@ -8,25 +10,74 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./graph.component.scss']
 })
 export class GraphComponent implements OnInit {
+
+  @Input() charData : any = {};
   
+  dataArray : null = null;
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
-  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: Label[] = ['power', 'combat', 'durability', 'speed', 'strenght'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+    { data: [, , , , , , ], label: '' },
+    // { data: [,,,,,,], label: 'S' }
   ];
+
+  public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100],
+    [50, 150, 120],
+    [250, 130, 70],
+  ];
+  public doughnutChartType: ChartType = 'doughnut';
+
 
   
 
-  constructor() { }
+  constructor() {
+console.log(this.charData);
+    this.dataArray = null;
+   }
 
   ngOnInit(): void {
-  }
+    
+    console.log(this.barChartData)
+    Object.values(this.charData)
+    console.log(this.charData)
 
-}
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    // changes.prop contains the old and the new value...
+    this.changeGraph(this.charData)
+    
+
+     
+   
+    
+      }
+      changeGraph(chardat: any){
+        let data : any = [
+          this.charData.power,
+          this.charData.combat,
+          this.charData.durability,
+          this.charData.speed,
+          this.charData.strength];
+
+          this.barChartData[0].data = data;
+          this.barChartData[0].label = this.charData.name;
+          this.dataArray = data;
+    
+        
+
+
+      }
+
+  
+  }
+  
+
+

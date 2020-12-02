@@ -1,4 +1,4 @@
-import { InterfaceHeroGeneral, InterfaceHeroPowerStats } from './../models/Interface-hero-general';
+import { InterfaceHeroDetail, InterfaceHeroGeneral, InterfacePowerStats } from './../models/Interface-hero-general';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -45,7 +45,7 @@ export class HeroesService {
     )
   }
 
-  getPowerStats(id: number){
+  getHeroDetail(id: number){
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     return this.http.get(Url).pipe(
       
@@ -54,7 +54,7 @@ export class HeroesService {
         if(!response){
           throw new Error('Value expected!');
         } else {
-            const formatResult : InterfaceHeroPowerStats = {
+            const formatResult : InterfaceHeroDetail = {
 
             id : response.id,
             name : response.name,
@@ -107,6 +107,38 @@ export class HeroesService {
 
             return null;
           }
+        }
+      }),
+        catchError((err)=>{
+        throw new Error(err.message);
+      })
+    )
+  }
+
+  getPowerStats(id: number){
+    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+    return this.http.get(Url).pipe(
+      
+        map((response: any) => {
+   
+        if(!response){
+          throw new Error('Value expected!');
+        } else {
+            const formatResult : InterfacePowerStats = {
+
+            id : response.id,
+            name : response.name,
+         
+            intelligence : response.powerstats.intelligence,
+            strength: response.powerstats.strength,
+            speed: response.powerstats.speed,
+            durability: response.powerstats.durability,
+            power: response.powerstats.power,
+            combat :response.powerstats.combat,
+                 
+            }
+        return formatResult;
+         
         }
       }),
         catchError((err)=>{

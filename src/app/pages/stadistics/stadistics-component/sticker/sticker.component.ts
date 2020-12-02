@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { InterfaceHeroPowerStats } from 'src/app/models/Interface-hero-general';
+import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 
 @Component({
   selector: 'app-sticker',
@@ -8,7 +8,7 @@ import { InterfaceHeroPowerStats } from 'src/app/models/Interface-hero-general';
 })
 export class StickerComponent implements OnInit {
 
-  @Input() arrayHeroe :  InterfaceHeroPowerStats[] | any = [];
+  @Input() arrayHeroe :  InterfacePowerStats[] | any = [];
   @Output() emmitId  = new EventEmitter<string>();
     
 
@@ -21,9 +21,9 @@ export class StickerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getId(id: any){
-    let heroId = id.target.id
-    debugger
+  getId(event: any){
+    let heroId = event.target.id;
+    
     this.emmitId.emit(heroId);
     
   }

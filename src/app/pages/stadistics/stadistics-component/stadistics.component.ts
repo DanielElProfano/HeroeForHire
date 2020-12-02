@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InterfaceHeroPowerStats } from 'src/app/models/Interface-hero-general';
+import { InterfaceHeroDetail, InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class StadisticsComponent implements OnInit {
 
-   arrayHeroes : InterfaceHeroPowerStats | any = [];
-  personaje : InterfaceHeroPowerStats | any = {};
+   arrayHeroes : InterfaceHeroDetail | any = [];
+  personaje : InterfaceHeroDetail | any = {};
+  powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
 
   constructor(private heroesService: HeroesService) { }
 
@@ -25,13 +26,20 @@ export class StadisticsComponent implements OnInit {
     for(let i= 1; i<=2; i++){
      
 
-      this.heroesService.getPowerStats(i).subscribe((result) => {
+      this.heroesService.getHeroDetail(i).subscribe((result) => {
         this.personaje = result;
         this.arrayHeroes.push(result);
- 
-        
-          });
+      });
     }
+  }
 
+   setId(id:number){
+    
+    this.heroesService.getPowerStats(id).subscribe((result) =>{
+      this.powerStats = result;
+      console.log(this.powerStats);
+    });
   }
 }
+  
+  

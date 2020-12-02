@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
   getPowerStats(){
     for(let i= 1; i<=2; i++){
-     
+     debugger
 
       this.heroesService.getPowerStats(i).subscribe((result) => {
         this.personajes = result;

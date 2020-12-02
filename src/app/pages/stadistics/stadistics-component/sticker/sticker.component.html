@@ -6,9 +6,9 @@
     <div class="b-gallery" *ngFor="let hero of arrayHeroe">
 
 
-         <div  id = "{{hero.id}}" class="b-hero-stick" (click)="getId(this.id)">
+         <div   class="b-hero-stick" (click)="getId($event)">
 
-            <img src="{{ hero.image }}" alt="">
+            <img id="{{hero.id}}"src="{{ hero.image }}" alt="">
             <div class="b-stats__label">
                 <p class ="b-text__slide">{{hero.name}}</p>
                 <p class ="b-text__slide">{{hero.alignment}}</p>
