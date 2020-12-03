@@ -1,6 +1,6 @@
 import { InterfaceHeroDetail } from './../../../../models/Interface-hero-general';
 import { Component, Input, OnInit } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-detail',
@@ -8,27 +8,22 @@ import { animate, style, transition, trigger } from '@angular/animations';
   styleUrls: ['./detail.component.scss'],
   animations: [
     trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
+      transition('void => *', [
         style({ opacity: 0 }),
         animate('300ms', style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        animate('300ms', style({ opacity: 0 }))
-      ]),
-    ]),
+     ]),
   ],
 })
-
 export class DetailComponent implements OnInit {
 
   @Input() heroDetail : InterfaceHeroDetail | any = {};
-
+  public state : string = 'inactive';
   constructor() { }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void {}   
     
-    
-  }
-
 }
+
+
+
