@@ -1,3 +1,4 @@
+import { InterfaceHeroGeneral } from './../../../../models/Interface-hero-general';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 
@@ -8,7 +9,7 @@ import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 })
 export class StickerComponent implements OnInit {
 
-  @Input() arrayHeroe :  InterfacePowerStats[] | any = [];
+  @Input() arrayHeroe :  InterfaceHeroGeneral[] | any = [];
   @Output() emmitId  = new EventEmitter<number>();
     
 
@@ -23,8 +24,6 @@ export class StickerComponent implements OnInit {
 
   getId(event: any){
     let heroId = parseInt(event.target.id,10);
-    console.log(typeof(heroId))
-    
     this.emmitId.emit(heroId);
     
   }

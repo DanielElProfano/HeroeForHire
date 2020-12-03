@@ -1,30 +1,20 @@
-<p>sticker works!</p>
- 
-<div class =" b-stas">
 
-    <div class="b-filter">filter here!</div>
-    <div class="b-gallery" *ngFor="let hero of arrayHeroe">
+<div class =" b-stats" >
 
-  
+   
 
-         <div  id="{{hero.id}}" class="b-hero-stick" >
+      <div class="b-stats__gallery" *ngFor="let hero of arrayHeroe">
+         <div  id="{{hero.id}}" class="b-stats__stick" >
            
-                <img id="{{hero.id}}" src="{{ hero.image }}" alt="" (click)="getId($event)">
-              
-             
-                  <div class="b-stats__label">
-                    <p class ="b-text__slide">{{hero.name}}</p>
-                    <p class ="b-text__slide">{{hero.alignment}}</p>
-               
-                </div>
+                <img class="b-stats__img" id="{{hero.id}}" src="{{ hero.image }}" alt="" (click)="getId($event)">
+                <div class="b-stats__label">
 
-     
+                      <p class ="b-text__slide">{{hero.name}}</p>
+                      <p class ="b-text__slide">{{hero.alignment}}</p>
+                 
+                 </div>
 
-        </div>
-
-    </div>
-
-
-
-
+         </div>
+      
+  </div>
 </div>

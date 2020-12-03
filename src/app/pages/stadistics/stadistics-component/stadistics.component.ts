@@ -1,3 +1,4 @@
+import { InterfaceHeroGeneral } from './../../../models/Interface-hero-general';
 import { Component, OnInit } from '@angular/core';
 import { InterfaceHeroDetail, InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
@@ -9,8 +10,9 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class StadisticsComponent implements OnInit {
 
-   arrayHeroes : InterfaceHeroDetail | any = [];
-  personaje : InterfaceHeroDetail | any = {};
+  showDetails = false;
+  arrayHeroes : InterfaceHeroGeneral | any = [];
+  personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
 
   constructor(private heroesService: HeroesService) { }
@@ -18,6 +20,7 @@ export class StadisticsComponent implements OnInit {
   ngOnInit(): void {
 
     this.getListPowerStats();
+    
 
 
   }
@@ -26,8 +29,8 @@ export class StadisticsComponent implements OnInit {
     for(let i= 1; i<=10; i++){
      
 
-      this.heroesService.getHeroDetail(i).subscribe((result) => {
-        this.personaje = result;
+      this.heroesService.getList(i).subscribe((result) => {
+       
         this.arrayHeroes.push(result);
       });
     }
@@ -39,7 +42,18 @@ export class StadisticsComponent implements OnInit {
     this.heroesService.getPowerStats(id).subscribe((result) =>{
       this.powerStats = result;
       console.log(this.powerStats);
+      
+      this.getDetail(id);
     });
+  }
+
+
+  getDetail(id:number){
+    this.heroesService.getHeroDetail(id).subscribe((result) =>{
+      this.personaje = result;
+      this.showDetails = true
+      
+    })
   }
 }
   

@@ -27,10 +27,10 @@ export class GraphComponent implements OnInit {
     // { data: [,,,,,,], label: 'S' }
   ];
 
-  public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartLabels: Label[] =  ['power', 'combat', 'durability', 'speed', 'strenght'];
   public doughnutChartData: MultiDataSet = [
-    [350, 450, 100],
-    [50, 150, 120],
+    [,,],
+    [,,12],
     [250, 130, 70],
   ];
   public doughnutChartType: ChartType = 'doughnut';

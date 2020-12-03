@@ -1,0 +1,47 @@
+.b-detail{
+
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 1rem;
+        width:500px;
+        margin:0;
+        box-shadow: 1px 1px 10px 0 rgb(177, 176, 176);
+    
+       
+
+       &__img{
+
+            width:100px;
+            border-radius: 20px;
+            margin-right: 1rem;
+
+
+       }
+
+       &__container{
+
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+       
+
+           
+        
+       }
+       &__sup{
+           display: flex;
+           align-items: center;
+           justify-content: start;
+           margin: 0;
+       }
+
+       &__description{
+        word-wrap: break-word;
+   
+        margin:1rem 0
+       }
+
+   
+
+
+}

@@ -2,11 +2,12 @@
 
 width: 100%;
 display:flex;
-justify-content: center;
+justify-content: space-between;
+margin-top: 2rem;
 
 
     &__container{
-        width: 90%;
+        width: 96%;
         display: flex;
         
         justify-content: space-between;
@@ -15,11 +16,22 @@ justify-content: center;
 
 }
 .b-filter{
-
-    width:300px;
-    background-color: cornflowerblue;
+   
+    width:20%;
+  
 }
 .b-gallery{
+    width:50%;
     display: flex;
     flex-direction: column;
+}
+
+   
+   
+
+.b-detalles{
+    display:flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
 }
