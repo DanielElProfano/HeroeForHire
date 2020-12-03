@@ -23,7 +23,7 @@ export class StadisticsComponent implements OnInit {
   }
 
   getListPowerStats(){
-    for(let i= 1; i<=2; i++){
+    for(let i= 1; i<=10; i++){
      
 
       this.heroesService.getHeroDetail(i).subscribe((result) => {
@@ -34,6 +34,7 @@ export class StadisticsComponent implements OnInit {
   }
 
    setId(id:number){
+
     
     this.heroesService.getPowerStats(id).subscribe((result) =>{
       this.powerStats = result;

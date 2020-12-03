@@ -9,7 +9,7 @@ import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 export class StickerComponent implements OnInit {
 
   @Input() arrayHeroe :  InterfacePowerStats[] | any = [];
-  @Output() emmitId  = new EventEmitter<string>();
+  @Output() emmitId  = new EventEmitter<number>();
     
 
   constructor() { 
@@ -22,7 +22,8 @@ export class StickerComponent implements OnInit {
   }
 
   getId(event: any){
-    let heroId = event.target.id;
+    let heroId = parseInt(event.target.id,10);
+    console.log(typeof(heroId))
     
     this.emmitId.emit(heroId);
     

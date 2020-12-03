@@ -5,20 +5,25 @@
     <div class="b-filter">filter here!</div>
     <div class="b-gallery" *ngFor="let hero of arrayHeroe">
 
+  
 
-         <div   class="b-hero-stick" (click)="getId($event)">
+         <div  id="{{hero.id}}" class="b-hero-stick" >
+           
+                <img id="{{hero.id}}" src="{{ hero.image }}" alt="" (click)="getId($event)">
+              
+             
+                  <div class="b-stats__label">
+                    <p class ="b-text__slide">{{hero.name}}</p>
+                    <p class ="b-text__slide">{{hero.alignment}}</p>
+               
+                </div>
 
-            <img id="{{hero.id}}"src="{{ hero.image }}" alt="">
-            <div class="b-stats__label">
-                <p class ="b-text__slide">{{hero.name}}</p>
-                <p class ="b-text__slide">{{hero.alignment}}</p>
-
-            </div>
+     
 
         </div>
 
     </div>
-    <div class="b-graph">Graph here!</div>
+
 
 
 
