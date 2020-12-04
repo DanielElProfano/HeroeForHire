@@ -7,16 +7,29 @@ import { StadisticsComponent } from './stadistics-component/stadistics.component
 import { StickerComponent } from './stadistics-component/sticker/sticker.component';
 import { GraphComponent } from './stadistics-component/graph/graph.component';
 import { FilterComponent } from './stadistics-component/filter/filter.component';
+import { DetailComponent } from './stadistics-component/detail/detail.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { FormComponent } from './stadistics-component/filter/form/form.component';
 
 
 @NgModule({
-  declarations: [StadisticsComponent, StickerComponent, GraphComponent, FilterComponent],
+  declarations:
+   [
+      StadisticsComponent, 
+      StickerComponent,
+      GraphComponent,
+      FilterComponent,
+      DetailComponent,
+      FormComponent
+    ],
   imports: [
     CommonModule,
     StadisticsRoutingModule,
     ChartsModule,
-  
-  ],
+    InfiniteScrollModule,
+    NgxSpinnerModule
+   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StadisticsModule { }

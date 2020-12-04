@@ -2,9 +2,8 @@ export interface InterfaceHeroGeneral {
 
     name : string;
     gender : string;
-    race : string;
-    weight : string[];
     image : string;
+    alignment : string;
     id: string;
    
 }
@@ -23,6 +22,12 @@ export interface InterfaceHeroDetail {
     durability: string;
     power: string;
     combat :string;
+    height  : string;
+    base : string;
+    fullName : string;
+    groupAffiliation: string; 
+    alterEgos: string;
+    alignment : string;
     
 }
 export interface InterfacePowerStats{

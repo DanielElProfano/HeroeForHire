@@ -20,12 +20,10 @@ export class StadisticsComponent implements OnInit {
   ngOnInit(): void {
 
     this.getListPowerStats();
-    
-
-
+  
   }
 
-  getListPowerStats(){
+  private getListPowerStats(){
     for(let i= 1; i<=10; i++){
      
 
@@ -36,19 +34,16 @@ export class StadisticsComponent implements OnInit {
     }
   }
 
-   setId(id:number){
-
-    
+   public setId(id:number):void{
+   
     this.heroesService.getPowerStats(id).subscribe((result) =>{
-      this.powerStats = result;
-      console.log(this.powerStats);
-      
-      this.getDetail(id);
+    this.powerStats = result;
+    this.getDetail(id);
+    
     });
   }
 
-
-  getDetail(id:number){
+  getDetail(id:number):void{
     this.heroesService.getHeroDetail(id).subscribe((result) =>{
       this.personaje = result;
       this.showDetails = true

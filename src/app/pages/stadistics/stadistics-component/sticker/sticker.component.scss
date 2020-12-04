@@ -20,6 +20,7 @@
         flex-direction: column;
         border: 1px solid rgb(175, 175, 175);
         padding: 1rem;
+        border-radius: 8px;
       
         height: 300px;
         width: 200px;
@@ -35,4 +36,16 @@
 
     
 
+}
+
+
+.spinner{
+    position: relative;
+
+
+    &__position{
+        position:absolute;
+    bottom: 10px;
+    left: 50%;
+    }
 }

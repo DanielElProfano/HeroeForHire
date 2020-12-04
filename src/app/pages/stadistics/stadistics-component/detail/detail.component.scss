@@ -13,9 +13,14 @@
 
             width:100px;
             border-radius: 20px;
-            margin-right: 1rem;
-
-
+            margin:0 1rem;
+            border: 1px solid white;
+           
+       }
+       &__name{
+           margin-left: 0px;
+           color: white;
+           font-size: 1.2rem;
        }
 
        &__container{
@@ -31,8 +36,12 @@
        &__sup{
            display: flex;
            align-items: center;
-           justify-content: start;
+           justify-content: left;
            margin: 0;
+           background-color: rgb(143, 143, 143);
+           border-radius: 8px;
+           margin-left: 0px;
+           padding: 4px;
        }
 
        &__description{
