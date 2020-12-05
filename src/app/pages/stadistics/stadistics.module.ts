@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ChartsModule } from 'ng2-charts';
 
 import { StadisticsRoutingModule } from './stadistics-routing.module';
@@ -10,7 +11,9 @@ import { FilterComponent } from './stadistics-component/filter/filter.component'
 import { DetailComponent } from './stadistics-component/detail/detail.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { FormComponent } from './stadistics-component/filter/form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+// import { FormComponent } from './stadistics-component/filter/form/form.component';
+
 
 
 @NgModule({
@@ -21,14 +24,16 @@ import { FormComponent } from './stadistics-component/filter/form/form.component
       GraphComponent,
       FilterComponent,
       DetailComponent,
-      FormComponent
+      // FormComponent
     ],
   imports: [
     CommonModule,
     StadisticsRoutingModule,
     ChartsModule,
     InfiniteScrollModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ReactiveFormsModule
+   
    ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

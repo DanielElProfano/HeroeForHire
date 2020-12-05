@@ -35,15 +35,21 @@ export class StadisticsComponent implements OnInit {
   }
 
    public setId(id:number):void{
-   
+   debugger
     this.heroesService.getPowerStats(id).subscribe((result) =>{
     this.powerStats = result;
     this.getDetail(id);
     
     });
   }
+  public setFilterArray(array: any):void{
+    debugger
+    // console.log(array);
+    this.arrayHeroes = array;
+  }
 
   getDetail(id:number):void{
+    
     this.heroesService.getHeroDetail(id).subscribe((result) =>{
       this.personaje = result;
       this.showDetails = true

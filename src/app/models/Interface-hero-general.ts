@@ -8,6 +8,21 @@ export interface InterfaceHeroGeneral {
    
 }
 
+export interface InterfaceFilteHeroes{
+
+    name : string;
+    gender : string;
+    image : string;
+    alignment : string;
+    id: string;
+    intelligence : string;
+    strength: string;
+    speed: string;
+    durability: string;
+    power: string;
+    combat :string;
+}
+
 export interface InterfaceHeroDetail {
 
     id: string;

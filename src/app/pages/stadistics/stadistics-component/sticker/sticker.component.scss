@@ -21,7 +21,7 @@
         border: 1px solid rgb(175, 175, 175);
         padding: 1rem;
         border-radius: 8px;
-      
+        background-color: orange;
         height: 300px;
         width: 200px;
         overflow: hidden;
@@ -30,6 +30,7 @@
     &__img{ 
 
         object-fit: contain;
+        object-position: center center;
         width: 200px;
         cursor: pointer;
           }

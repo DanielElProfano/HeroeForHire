@@ -1,12 +1,10 @@
 <div class =" b-stats">
 
-    
-
-    <div class="b-stats__container">
+     <div class="b-stats__container">
 
         <div class="b-filter">    
             
-            <app-filter></app-filter>  
+            <app-filter (emmitArray)="setFilterArray($event)"></app-filter>  
         
         </div>
 
