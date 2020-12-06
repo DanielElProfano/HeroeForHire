@@ -33,9 +33,9 @@ export class StadisticsComponent implements OnInit {
     }
   }
 
-   setId(id:number){
+   setId(id:string){
     
-    this.heroesService.getPowerStats(id).subscribe((result) =>{
+    this.heroesService.getPowerStats(parseInt(id)).subscribe((result) =>{
       this.powerStats = result;
       console.log(this.powerStats);
     });
